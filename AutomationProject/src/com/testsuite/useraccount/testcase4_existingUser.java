@@ -26,7 +26,7 @@ public class testcase4_existingUser {
    @Test
    public void existingUser() {
 	   common.registration();
-	   	   Browsers.driver.findElement(By.xpath("//*[@name='email_create']")).sendKeys(Variables.registeredEmail);
+	   Browsers.driver.findElement(By.xpath("//*[@name='email_create']")).sendKeys(Variables.registeredEmail);
 	   Browsers.driver.findElement(By.xpath("//*[@id='SubmitCreate']")).click();
 	   
 	   common.implicitWait();
