@@ -16,10 +16,11 @@ public class testcase5_forgotPassword {
 		browser.ChromeBrowser();
 	}
 	
-	/*@AfterTest
+	@AfterTest
 	public static void closeBrowser(){
 		browser.closeBrowser();
-	}*/
+	}
+	
 	@Test
 	public void forgotPassword() {
 		Browsers.driver.findElement(By.xpath("//*[contains(@title, 'Log in')]")).click();
