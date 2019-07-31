@@ -38,4 +38,8 @@ public class testcase5_forgotPassword {
 		String actualConfirmation = Browsers.driver.findElement(By.xpath("//*[contains(@class, 'alert-success')]")).getText();
 		Assert.assertEquals(actualConfirmation, expectedConfirmation);
 	}
+	
+	public void forgotPasswordNonExistentUser() {
+		
+	}
 }
