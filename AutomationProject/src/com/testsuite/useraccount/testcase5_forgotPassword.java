@@ -34,7 +34,7 @@ public class testcase5_forgotPassword {
 		Browsers.driver.findElement(By.xpath("//*[@id='form_forgotpassword']/fieldset/p/button/span")).click();
 		common.implicitWait();
 		
-		String expectedConfirmation = "A confirmation email has been sent to your address: test.slnx1@gmail.com";
+		String expectedConfirmation = "A confirmation email has been sent to your address: " + Variables.registeredEmail;
 		String actualConfirmation = Browsers.driver.findElement(By.xpath("//*[contains(@class, 'alert-success')]")).getText();
 		Assert.assertEquals(actualConfirmation, expectedConfirmation);
 	}
