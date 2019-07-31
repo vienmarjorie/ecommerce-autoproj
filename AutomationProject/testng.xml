@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.testsuite.useraccount">
+ <test name="UserAccount">
+ <classes>
+ 	<class name="com.testsuite.useraccount.testcase1_verifyHomePage" />
+ 	<class name="com.testsuite.useraccount.testcase2_userRegistration" />
+ 	<class name="com.testsuite.useraccount.testcase3_userLogin" />
+ </classes>
+ </test>
+</suite>
