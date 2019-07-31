@@ -21,7 +21,7 @@ public class testcase5_forgotPassword {
 		browser.closeBrowser();
 	}
 	
-	@Test
+	@Test (priority=1)
 	public void forgotPassword() {
 		Browsers.driver.findElement(By.xpath("//*[contains(@title, 'Log in')]")).click();
 		Browsers.driver.findElement(By.xpath("//a[@href='http://automationpractice.com/index.php?controller=password']")).click();
@@ -39,7 +39,23 @@ public class testcase5_forgotPassword {
 		Assert.assertEquals(actualConfirmation, expectedConfirmation);
 	}
 	
+	@Test (priority=2)
 	public void forgotPasswordNonExistentUser() {
+		
+		Browsers.driver.findElement(By.xpath("//*[@title='Back to Login']")).click();
+		Browsers.driver.findElement(By.xpath("//a[@href='http://automationpractice.com/index.php?controller=password']")).click();
+		
+		String expected = "FORGOT YOUR PASSWORD?";
+		String actual = Browsers.driver.findElement(By.xpath("//div[@class='box']/h1")).getText();
+		Assert.assertEquals(actual, expected);
+		
+		Browsers.driver.findElement(By.xpath("//input[@id='email']")).sendKeys(Variables.unregisteredEmail);
+		Browsers.driver.findElement(By.xpath("//*[@id='form_forgotpassword']/fieldset/p/button/span")).click();
+		common.implicitWait();
+		
+		String expectedConfirmation = "There is no account registered for this email address.";
+		String actualConfirmation = Browsers.driver.findElement(By.xpath("//*[contains(@class, 'alert-danger')]/ol")).getText();
+		Assert.assertEquals(actualConfirmation, expectedConfirmation);
 		
 	}
 }
