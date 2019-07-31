@@ -15,6 +15,7 @@ public class Browsers {
 		options.addArguments("disable-infobars");
 		options.addArguments("start-maximised");
 		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
 		driver.get(URL);
 	}
 	
