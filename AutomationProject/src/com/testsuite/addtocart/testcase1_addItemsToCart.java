@@ -36,5 +36,6 @@ public class testcase1_addItemsToCart {
 		String expected = "Product successfully added to your shopping cart";
 		String actual = Browsers.driver.findElement(By.xpath("//*[@id='layer_cart']/div[1]/div[1]/h2")).getText();
 		Assert.assertEquals(actual, expected);
+		
 	}
 }
