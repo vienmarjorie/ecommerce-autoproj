@@ -28,7 +28,7 @@ public class testcase4_existingUser {
 	   common.registration();
 	   Browsers.driver.findElement(By.xpath("//*[@name='email_create']")).sendKeys(Variables.registeredEmail);
 	   Browsers.driver.findElement(By.xpath("//*[@id='SubmitCreate']")).click();
-	   Browsers.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   common.implicitWait();
 	   String expected = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
 	   String actual = Browsers.driver.findElement(By.xpath("//*[@id='create_account_error']/ol/li")).getText();
 	   System.out.println(actual);
