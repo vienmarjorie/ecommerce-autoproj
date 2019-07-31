@@ -2,8 +2,6 @@ package com.testsuite.useraccount;
 
 import common.*;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.*;
