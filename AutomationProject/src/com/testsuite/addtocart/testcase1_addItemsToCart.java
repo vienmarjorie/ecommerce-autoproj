@@ -3,8 +3,11 @@ package com.testsuite.addtocart;
 import common.*;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -20,10 +23,10 @@ public class testcase1_addItemsToCart {
 		browser.ChromeBrowser();
 	}
 	
-	/*@AfterTest
+	@AfterTest
 	public static void closeBrowser() {
 		browser.closeBrowser();
-	}*/
+	}
 	
 	@Test
 	public void addItemToCart() {
@@ -34,6 +37,7 @@ public class testcase1_addItemsToCart {
 		Browsers.driver.findElement(By.xpath("//*[@data-id-product='2']")).click();
 		
 		String expected = "Product successfully added to your shopping cart";
+		new WebDriverWait(Browsers.driver, 10).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@id='layer_cart']/div[1]/div[1]/h2"), "Product successfully added to your shopping cart"));
 		String actual = Browsers.driver.findElement(By.xpath("//*[@id='layer_cart']/div[1]/div[1]/h2")).getText();
 		Assert.assertEquals(actual, expected);
 		
