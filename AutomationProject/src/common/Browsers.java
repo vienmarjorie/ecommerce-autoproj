@@ -13,7 +13,6 @@ public class Browsers {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\browser\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("disable-infobars");
-		options.addArguments("start-maximised");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(URL);
