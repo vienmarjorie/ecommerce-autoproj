@@ -1,6 +1,7 @@
 # ecommerce-autoproj
 Automated an e-commerce website using JAVA with Selenium + TestNG.
 
+http://automationpractice.com/index.php
 This project is still In Progress.
 
 The e-commerce website is ideal for individuals who is learning automation.
