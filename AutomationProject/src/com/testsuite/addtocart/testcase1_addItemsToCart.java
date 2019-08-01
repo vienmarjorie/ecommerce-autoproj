@@ -15,6 +15,7 @@ public class testcase1_addItemsToCart {
 	
 	static Browsers browser = new Browsers();
 	static CommonFunctionality common = new CommonFunctionality();
+	static int timeout = 20;
 
 	
 	@BeforeTest
@@ -30,21 +31,26 @@ public class testcase1_addItemsToCart {
 	@Test (priority=1)
 	public void addItemToCart() {
 		Actions action = new Actions(Browsers.driver);
-		WebElement element = Browsers.driver.findElement(By.xpath("//*[@title='Blouse']"));
+		WebElement element = null;
+		
+		element = Browsers.driver.findElement(By.xpath("//*[@title='Blouse']"));
 		action.moveToElement(element).perform();
 		element = Browsers.driver.findElement(By.xpath("//*[@data-id-product='2']"));
 		element.click();
 		
 		String expected = "Product successfully added to your shopping cart";
-		new WebDriverWait(Browsers.driver, 10).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@id='layer_cart']/div[1]/div[1]/h2"), "Product successfully added to your shopping cart"));
-		String actual = Browsers.driver.findElement(By.xpath("//*[@id='layer_cart']/div[1]/div[1]/h2")).getText();
+		new WebDriverWait(Browsers.driver, 20).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@class='layer_cart']/div[1]/div[1]/h2"), "Product successfully added to your shopping cart"));
+		String actual = element.getText();		
 		Assert.assertEquals(actual, expected);
 	}
-	@Test (priority=2)
+	//@Test (priority=2)
 	public void addAnotherItemToCart() {
+		
 		Actions action = new Actions(Browsers.driver);
+		WebDriverWait wait = new WebDriverWait(Browsers.driver, timeout);
 		WebElement element = null;
-		new WebDriverWait(Browsers.driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
+		//new WebDriverWait(Browsers.driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
+		element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
 		element = Browsers.driver.findElement(By.xpath("//*[@title='Continue shopping']"));
 		element.click();
 		
@@ -53,16 +59,18 @@ public class testcase1_addItemsToCart {
 		element = Browsers.driver.findElement(By.xpath("//*[@data-id-product='7']"));
 		element.click();
 		
-		new WebDriverWait(Browsers.driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
+		new WebDriverWait(Browsers.driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
 		element = Browsers.driver.findElement(By.xpath("//*[@title='Continue shopping']"));
 		element.click();
 		
 		element = Browsers.driver.findElement(By.xpath("//*[@title='Printed Summer Dress']"));
 		action.moveToElement(element).perform();
+		//element = Browsers.driver.findElement(By.xpath("//*[@data-id-product='5']"));
+		new WebDriverWait(Browsers.driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@data-id-product='5']")));
 		element = Browsers.driver.findElement(By.xpath("//*[@data-id-product='5']"));
 		element.click();
 		
-		new WebDriverWait(Browsers.driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
+		new WebDriverWait(Browsers.driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Continue shopping']")));
 		element = Browsers.driver.findElement(By.xpath("//*[@title='Continue shopping']"));
 		element.click();
 	}
