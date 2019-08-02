@@ -1,10 +1,32 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="com.testsuite.useraccount">
- <test name="UserAccount">
+<suite thread-count="2" verbose="10" name="com.testsuite.useraccount" parallel="tests">
+ <test verbose="2" name="UserAccount" group-by-instances="true">
  <classes>
- 	<class name="com.testsuite.useraccount.testcase1_verifyHomePage" />
- 	<class name="com.testsuite.useraccount.testcase2_userRegistration" />
- 	<class name="com.testsuite.useraccount.testcase3_userLogin" />
+ 	<!--  <class name="com.testsuite.useraccount.testcase1_verifyHomePage">
+ 		<methods>
+ 			<include name ="verifyHomePage"/> 		
+ 		</methods>
+ 	</class>-->
+ 	
+ 	 <class name ="com.testsuite.useraccount.testcase3_userLogin">
+ 		<methods>
+	 		<include name ="userLogin"/> 
+	 		<include name ="userLogout"/> 		
+ 		</methods>
+ 	</class>
+ 	
+ 	<!--<class name ="com.testsuite.useraccount.testcase4_existingUser">
+ 		<methods>
+ 			<include name ="existingUser"/> 		
+ 		</methods>
+ 	</class> -->
+ 	
+ 	<class name ="com.testsuite.useraccount.testcase5_forgotPassword">
+ 		<methods>
+	 		<include name="forgotPassword"/>
+	 		<include name="forgotPasswordNonExistentUser"/>		
+ 		</methods>
+ 	</class>
  </classes>
  </test>
 </suite>
