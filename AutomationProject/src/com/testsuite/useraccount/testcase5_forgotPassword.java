@@ -3,6 +3,8 @@ package com.testsuite.useraccount;
 import common.*;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -23,7 +25,13 @@ public class testcase5_forgotPassword {
 	
 	@Test (priority=1)
 	public void forgotPassword() {
-		Browsers.driver.findElement(By.xpath("//*[contains(@title, 'Log in')]")).click();
+		int timeOut = 20;
+		String text = "Sign in";
+		
+		String actualTitle = Browsers.driver.getTitle();
+		System.out.println(actualTitle);
+		new WebDriverWait (Browsers.driver, timeOut).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@id='header']/div[2]/div/div/nav/div[1]/a"), text));
+		Browsers.driver.findElement(By.xpath("//*[@id='header']/div[2]/div/div/nav/div[1]/a")).click();
 		Browsers.driver.findElement(By.xpath("//a[@href='http://automationpractice.com/index.php?controller=password']")).click();
 		
 		String expected = "FORGOT YOUR PASSWORD?";

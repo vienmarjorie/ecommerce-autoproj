@@ -26,11 +26,20 @@ public class testcase3_userLogin {
 		browser.closeBrowser();
 	}
 	
-    @Test
+    @Test (priority=1)
     public void userLogin() {
     	common.login();
     	String expected = "My account";
     	String actual = Browsers.driver.findElement(By.xpath("//div[@id='columns']/div[1]/span[2]")).getText();
         Assert.assertEquals(actual, expected);
+    }
+    
+    @Test (priority=2)
+    public void userLogout() {
+    	common.implicitWait();
+    	common.logout();
+    	String expected = "Login - My Store";
+    	String actual = Browsers.driver.getTitle();
+    	Assert.assertEquals(actual, expected);
     }
 }

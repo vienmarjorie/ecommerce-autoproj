@@ -21,11 +21,11 @@ public class testcase2_userRegistration {
 		browser.ChromeBrowser();
 	}
 	
-	/*@AfterTest
+	@AfterTest
 	
 	public static void closeBrowser() {
 		browser.closeBrowser();
-	}*/
+	}
 	
   @Test (priority=1)
   public void createAccount() {
@@ -46,7 +46,7 @@ public class testcase2_userRegistration {
 	  Assert.assertEquals(actual, expected);
 	  
   }
-  @Test (priority=2)
+ // @Test (priority=2)
   public void emptyRequiredFields() {
 	  
 	  int timeOut = 20;
@@ -66,9 +66,10 @@ public class testcase2_userRegistration {
 	  Assert.assertEquals(actualErrorMsg, expectedErrorMsg);
   }
   
-  //@Test
+  //@Test (priority=3)
   public void userRegistration() {
 	  
+	  int timeOut = 20;
 	  WebElement element = null;
 	   
 	  //Gender
@@ -94,10 +95,88 @@ public class testcase2_userRegistration {
 	  System.out.println(email);
 	  Assert.assertEquals(email, Variables.emailRegistration);
 	  
+	  //Password
 	  element = Browsers.driver.findElement(By.xpath("//*[@id='passwd']"));
 	  element.click();
 	  element.sendKeys(Variables.invalidRegPassword);
 	  
+	  //Date of birth
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='days']"));
+	  element.click();
 	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='days']/option[6]"));
+	  element.click();
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='months']"));
+	  element.click();
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='months']/option[2]"));
+	  element.click();
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='years']"));
+	  element.click();
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='years']/option[31]"));
+	  element.click();
+	  
+	  //Newsletter Subscription
+	  element = Browsers.driver.findElement(By.xpath("//*[@name='newsletter']"));
+	  element.click();
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@name='optin']"));
+	  element.click();
+	  
+	  //Name
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='firstname']"));
+	  String actualFirstName = element.getAttribute("value");
+	  Assert.assertEquals(actualFirstName, Variables.firstName);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@name='lastname']"));
+	  String actualLastName = element.getAttribute("value");
+	  Assert.assertEquals(actualLastName, Variables.lastName);
+	  
+	  //Address
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='company']"));
+	  element.sendKeys(Variables.company);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@name='address1']"));
+	  element.sendKeys(Variables.address);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='city']"));
+	  element.sendKeys(Variables.city);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@name='id_state']/option[6]"));
+	  element.click();
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='postcode']"));
+	  element.sendKeys(Variables.postCode);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@name='phone_mobile']"));
+	  element.sendKeys(Variables.phoneNumber);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='alias']"));
+	  element.clear();
+	  element.sendKeys(Variables.aliasEmail);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='submitAccount']"));
+	  element.click();
+	  
+	  String expectedPasswdError = "passwd is invalid.";
+	  new WebDriverWait(Browsers.driver, timeOut).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[contains(@class, 'alert-danger')]/ol/li"), Variables.passwordErrorMsg));
+	  element = Browsers.driver.findElement(By.xpath("//*[contains(@class, 'alert-danger')]/ol/li"));
+	  String actualPasswdError = element.getText();
+	  Assert.assertEquals(actualPasswdError, expectedPasswdError);
+	  
+	  //Password
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='passwd']"));
+	  element.click();
+	  element.sendKeys(Variables.emailRegPassword);
+	  
+	  element = Browsers.driver.findElement(By.xpath("//*[@id='submitAccount']"));
+	  element.click(); 
+	  
+	  String expected = "My account";
+  	  String actual = Browsers.driver.findElement(By.xpath("//div[@id='columns']/div[1]/span[2]")).getText();
+      Assert.assertEquals(actual, expected);
   }
 }

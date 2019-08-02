@@ -22,7 +22,7 @@ public class testcase1_verifyHomePage {
 	}
 	
 	@Test
-	public void verifyHomePage () {
+	public void verifyHomePage() {
 		String expected = "My Store";
 		String actual = Browsers.driver.getTitle();
 		Assert.assertEquals(actual, expected);
