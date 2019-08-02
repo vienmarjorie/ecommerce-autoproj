@@ -18,7 +18,6 @@ public class Browsers {
 		driver.get(URL);
 	}
 	
-	
 	public void closeBrowser() {
 		driver.quit();
 	}
