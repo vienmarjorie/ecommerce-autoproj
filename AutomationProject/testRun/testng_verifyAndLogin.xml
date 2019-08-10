@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite - Existing User and Forgot Password" preserve-order="true">
+    <test name="Test - Existing User and Forgot Password">
+        <classes>
+            <class name="com.testsuite.useraccount.testcase4_existingUser" />
+            <class name="com.testsuite.useraccount.testcase5_forgotPassword" />
+        </classes>
+    </test>
+</suite>
