@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [UserAccount]" parallel="tests">
+  <test thread-count="5" name="UserAccountTest(failed)" parallel="tests">
     <classes>
-      <class name="com.testsuite.useraccount.testcase1_verifyHomePage">
+      <class name="com.testsuite.useraccount.testcase5_forgotPassword">
         <methods>
-          <include name="verifyHomePage"/>
-          <include name="closeBrowser"/>
           <include name="openBrowser"/>
+          <include name="forgotPasswordNonExistentUser"/>
+          <include name="forgotPassword"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.testsuite.useraccount.testcase1_verifyHomePage -->
+      </class> <!-- com.testsuite.useraccount.testcase5_forgotPassword -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- UserAccountTest(failed) -->
+</suite> <!-- Failed suite [UserAccount] -->

@@ -1,53 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="com.testsuite.useraccount" duration-ms="40741" started-at="2019-07-30T17:29:56Z" finished-at="2019-07-30T17:30:37Z">
+  <suite name="Suite - ExistingUserandForgot Password" duration-ms="34336" started-at="2019-08-10T15:40:05Z" finished-at="2019-08-10T15:40:39Z">
     <groups>
     </groups>
-    <test name="UserAccount" duration-ms="40741" started-at="2019-07-30T17:29:56Z" finished-at="2019-07-30T17:30:37Z">
-      <class name="com.testsuite.useraccount.testcase2_userRegistration">
-        <test-method status="PASS" signature="userRegistration()[pri:0, instance:com.testsuite.useraccount.testcase2_userRegistration@39aeed2f]" name="userRegistration" duration-ms="2852" started-at="2019-07-30T17:30:29Z" finished-at="2019-07-30T17:30:32Z">
+    <test name="Test - ExistingUserandForgot Password" duration-ms="34336" started-at="2019-08-10T15:40:05Z" finished-at="2019-08-10T15:40:39Z">
+      <class name="com.testsuite.useraccount.testcase5_forgotPassword">
+        <test-method status="PASS" signature="forgotPassword()[pri:1, instance:com.testsuite.useraccount.testcase5_forgotPassword@cc285f4]" name="forgotPassword" duration-ms="4527" started-at="2019-08-10T15:40:30Z" finished-at="2019-08-10T15:40:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userRegistration -->
-      </class> <!-- com.testsuite.useraccount.testcase2_userRegistration -->
+        </test-method> <!-- forgotPassword -->
+        <test-method status="PASS" signature="forgotPasswordNonExistentUser()[pri:2, instance:com.testsuite.useraccount.testcase5_forgotPassword@cc285f4]" name="forgotPasswordNonExistentUser" duration-ms="3817" started-at="2019-08-10T15:40:35Z" finished-at="2019-08-10T15:40:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotPasswordNonExistentUser -->
+      </class> <!-- com.testsuite.useraccount.testcase5_forgotPassword -->
+      <class name="com.testsuite.useraccount.testcase4_existingUser">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase4_existingUser@c038203]" name="openBrowser" is-config="true" duration-ms="11431" started-at="2019-08-10T15:40:05Z" finished-at="2019-08-10T15:40:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase5_forgotPassword@cc285f4]" name="openBrowser" is-config="true" duration-ms="10608" started-at="2019-08-10T15:40:16Z" finished-at="2019-08-10T15:40:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="existingUser()[pri:0, instance:com.testsuite.useraccount.testcase4_existingUser@c038203]" name="existingUser" duration-ms="3206" started-at="2019-08-10T15:40:27Z" finished-at="2019-08-10T15:40:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- existingUser -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase4_existingUser@c038203]" name="closeBrowser" is-config="true" duration-ms="712" started-at="2019-08-10T15:40:39Z" finished-at="2019-08-10T15:40:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase5_forgotPassword@cc285f4]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2019-08-10T15:40:39Z" finished-at="2019-08-10T15:40:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.testsuite.useraccount.testcase4_existingUser -->
+    </test> <!-- Test - ExistingUserandForgot Password -->
+  </suite> <!-- Suite - ExistingUserandForgot Password -->
+  <suite name="UserAccountTestSuites" duration-ms="0" started-at="2019-08-10T15:41:08Z" finished-at="2019-08-10T15:41:08Z">
+    <groups>
+    </groups>
+  </suite> <!-- UserAccountTestSuites -->
+  <suite name="Suite - Verify and Login" duration-ms="28282" started-at="2019-08-10T15:40:39Z" finished-at="2019-08-10T15:41:08Z">
+    <groups>
+    </groups>
+    <test name="Test - Verify and Login" duration-ms="28282" started-at="2019-08-10T15:40:39Z" finished-at="2019-08-10T15:41:08Z">
       <class name="com.testsuite.useraccount.testcase1_verifyHomePage">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase1_verifyHomePage@5c7fa833]" name="openBrowser" is-config="true" duration-ms="11378" started-at="2019-07-30T17:29:56Z" finished-at="2019-07-30T17:30:07Z">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase1_verifyHomePage@685cb137]" name="openBrowser" is-config="true" duration-ms="9794" started-at="2019-08-10T15:40:39Z" finished-at="2019-08-10T15:40:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase2_userRegistration@39aeed2f]" name="openBrowser" is-config="true" duration-ms="10518" started-at="2019-07-30T17:30:07Z" finished-at="2019-07-30T17:30:18Z">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase3_userLogin@6a41eaa2]" name="openBrowser" is-config="true" duration-ms="11506" started-at="2019-08-10T15:40:49Z" finished-at="2019-08-10T15:41:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.testsuite.useraccount.testcase3_userLogin@724af044]" name="openBrowser" is-config="true" duration-ms="10648" started-at="2019-07-30T17:30:18Z" finished-at="2019-07-30T17:30:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="verifyHomePage()[pri:0, instance:com.testsuite.useraccount.testcase1_verifyHomePage@5c7fa833]" name="verifyHomePage" duration-ms="15" started-at="2019-07-30T17:30:29Z" finished-at="2019-07-30T17:30:29Z">
+        <test-method status="PASS" signature="verifyHomePage()[pri:0, instance:com.testsuite.useraccount.testcase1_verifyHomePage@685cb137]" name="verifyHomePage" duration-ms="9" started-at="2019-08-10T15:41:01Z" finished-at="2019-08-10T15:41:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePage -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase1_verifyHomePage@5c7fa833]" name="closeBrowser" is-config="true" duration-ms="744" started-at="2019-07-30T17:30:36Z" finished-at="2019-07-30T17:30:37Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase1_verifyHomePage@685cb137]" name="closeBrowser" is-config="true" duration-ms="731" started-at="2019-08-10T15:41:07Z" finished-at="2019-08-10T15:41:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase3_userLogin@724af044]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2019-07-30T17:30:37Z" finished-at="2019-07-30T17:30:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase2_userRegistration@39aeed2f]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2019-07-30T17:30:37Z" finished-at="2019-07-30T17:30:37Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testsuite.useraccount.testcase3_userLogin@6a41eaa2]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2019-08-10T15:41:08Z" finished-at="2019-08-10T15:41:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- com.testsuite.useraccount.testcase1_verifyHomePage -->
       <class name="com.testsuite.useraccount.testcase3_userLogin">
-        <test-method status="PASS" signature="userLogin()[pri:0, instance:com.testsuite.useraccount.testcase3_userLogin@724af044]" name="userLogin" duration-ms="4560" started-at="2019-07-30T17:30:32Z" finished-at="2019-07-30T17:30:36Z">
+        <test-method status="PASS" signature="userLogin()[pri:1, instance:com.testsuite.useraccount.testcase3_userLogin@6a41eaa2]" name="userLogin" duration-ms="4082" started-at="2019-08-10T15:41:01Z" finished-at="2019-08-10T15:41:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogin -->
+        <test-method status="PASS" signature="userLogout()[pri:2, instance:com.testsuite.useraccount.testcase3_userLogin@6a41eaa2]" name="userLogout" duration-ms="2153" started-at="2019-08-10T15:41:05Z" finished-at="2019-08-10T15:41:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLogout -->
       </class> <!-- com.testsuite.useraccount.testcase3_userLogin -->
-    </test> <!-- UserAccount -->
-  </suite> <!-- com.testsuite.useraccount -->
+    </test> <!-- Test - Verify and Login -->
+  </suite> <!-- Suite - Verify and Login -->
 </testng-results>
