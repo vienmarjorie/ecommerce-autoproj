@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [UserAccount]" parallel="tests">
+  <test thread-count="5" name="UserAccountTest(failed)" parallel="tests">
+    <classes>
+      <class name="com.testsuite.useraccount.testcase5_forgotPassword">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="forgotPasswordNonExistentUser"/>
+          <include name="forgotPassword"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.testsuite.useraccount.testcase5_forgotPassword -->
+    </classes>
+  </test> <!-- UserAccountTest(failed) -->
+</suite> <!-- Failed suite [UserAccount] -->
