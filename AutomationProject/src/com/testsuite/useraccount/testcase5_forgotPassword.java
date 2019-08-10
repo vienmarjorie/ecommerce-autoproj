@@ -28,8 +28,6 @@ public class testcase5_forgotPassword {
 		int timeOut = 20;
 		String text = "Sign in";
 		
-		String actualTitle = Browsers.driver.getTitle();
-		System.out.println(actualTitle);
 		new WebDriverWait (Browsers.driver, timeOut).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@id='header']/div[2]/div/div/nav/div[1]/a"), text));
 		Browsers.driver.findElement(By.xpath("//*[@id='header']/div[2]/div/div/nav/div[1]/a")).click();
 		Browsers.driver.findElement(By.xpath("//a[@href='http://automationpractice.com/index.php?controller=password']")).click();
