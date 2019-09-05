@@ -73,4 +73,10 @@ public class testcase1_addItemsToCart {
 		element = Browsers.driver.findElement(By.xpath("//*[@title='Continue shopping']"));
 		element.click();
 	}
+	@Test (priority=3)
+	public void verifyItemsinCart() {
+		WebElement element = null;
+		element = Browsers.driver.findElement(By.xpath("//*[@title='View my shopping cart']"));
+		element.click();
+	}
 }
